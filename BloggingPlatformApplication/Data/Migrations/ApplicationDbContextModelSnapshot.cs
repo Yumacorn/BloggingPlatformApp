@@ -45,7 +45,7 @@ namespace BloggingPlatformApplication.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BlogPost");
+                    b.ToTable("BlogPost", (string)null);
                 });
 
             modelBuilder.Entity("BloggingPlatformApplication.Models.User", b =>
@@ -66,7 +66,7 @@ namespace BloggingPlatformApplication.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

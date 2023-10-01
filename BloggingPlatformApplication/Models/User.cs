@@ -12,6 +12,11 @@ namespace BloggingPlatformApplication.Models
 
 
         // Navigation properties to dependent child model of BlogPosts
-        public List<BlogPost> BlogPosts { get; set; }
+        public List<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
+
+        public User()
+        {
+                
+        }
     }
 }
