@@ -49,6 +49,7 @@ namespace BloggingPlatformApplication.Controllers
         public IActionResult Create()
         {
             ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
+            ViewData["User"] = new SelectList(_context.User, "Id", "User");
             return View();
         }
 
@@ -57,8 +58,10 @@ namespace BloggingPlatformApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content,UserId")] BlogPost blogPost)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,User,UserId")] BlogPost blogPost)
         {
+            System.Diagnostics.Debug.WriteLine(blogPost.UserId);
+            System.Diagnostics.Debug.WriteLine(blogPost);
             if (ModelState.IsValid)
             {
                 _context.Add(blogPost);

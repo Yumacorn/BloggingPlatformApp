@@ -9,8 +9,8 @@ namespace BloggingPlatformApplication.Models
         public string Title { get; set; }
         [Required]
         public string Content { get; set; }
-        public DateTime timestamp_creation { get; }
-        public DateTime timestamp_updated { get; }
+        //public static DateTime timestamp_creation = DateTime.Now;
+        //public DateTime timestamp_updated = DateTime.Now;
 
         // Navigation properties to parent model of User
         public int UserId { get; set; }
