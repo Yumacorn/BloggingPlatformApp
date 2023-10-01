@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using BloggingPlatformApplication.Models;
 
 namespace BloggingPlatformApplication.Data
 {
@@ -9,5 +10,6 @@ namespace BloggingPlatformApplication.Data
             : base(options)
         {
         }
+        public DbSet<BloggingPlatformApplication.Models.User> User { get; set; } = default!;
     }
 }
