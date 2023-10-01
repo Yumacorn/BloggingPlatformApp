@@ -12,5 +12,9 @@ namespace BloggingPlatformApplication.Models
         public DateTime timestamp_creation { get; }
         public DateTime timestamp_updated { get; }
 
+        // Navigation properties to parent model of User
+        public int UserId { get; set; }
+        public User User { get; set; }
+
     }
 }
