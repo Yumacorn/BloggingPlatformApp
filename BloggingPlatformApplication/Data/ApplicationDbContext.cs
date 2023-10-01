@@ -11,5 +11,6 @@ namespace BloggingPlatformApplication.Data
         {
         }
         public DbSet<BloggingPlatformApplication.Models.User> User { get; set; } = default!;
+        public DbSet<BloggingPlatformApplication.Models.BlogPost> BlogPost { get; set; } = default!;
     }
 }

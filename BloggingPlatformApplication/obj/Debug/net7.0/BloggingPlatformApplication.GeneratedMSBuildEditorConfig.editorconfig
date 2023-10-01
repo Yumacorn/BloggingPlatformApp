@@ -20,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/BlogPosts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/BlogPosts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/BlogPosts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/BlogPosts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/BlogPosts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yumacorn/Desktop/BloggingPlatformApplication/BloggingPlatformApplication/BloggingPlatformApplication/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
