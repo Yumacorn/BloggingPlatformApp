@@ -28,7 +28,18 @@ Please note that support for Visual Studio for Mac is [planning to be retired on
 6) This will open up the Project in your localhost default internet browser and allow you to explore the application.
 
     * If the browser does not open automatically, you may need to choose IIS for the emulator.
+    ![Image](https://images2.imgbox.com/d0/e5/BHc1sJy0_o.jpg)
     
+7) On the website, you can use the **Users** and **Blog Posts** navbar links to see the Users and Blog Posts, respectively.
+    
+    * Here you can have the ability to Create, Read, Update, Delete from both Data Domains
+    
+## TODO List
+    * TODO: Restrict CRUD ability to edit profile information and Blog Posts as appropraite to own User
+    * TODO: Seed Database with starting data using data seeding mechanism
+    * TODO: Implement additional data validation and error handling in the API beyond required and primitive data types
+    * TODO: Testing features (could use Cypress.io)
+    * TODO: (Bonus) Pagination and filtering options for blog posts.
 
 ## The Assignment
 
