@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloggingPlatformApplication.Data;
 using BloggingPlatformApplication.Models;
+using System.Diagnostics;
 
 namespace BloggingPlatformApplication.Controllers
 {
@@ -22,6 +23,7 @@ namespace BloggingPlatformApplication.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
+              //Debug.WriteLine(_context.User);
               return _context.User != null ? 
                           View(await _context.User.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.User'  is null.");
