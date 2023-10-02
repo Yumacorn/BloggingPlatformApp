@@ -5,9 +5,9 @@ namespace BloggingPlatformApplication.Models
     public class User
     {
         public int Id { get; set; }
-        [Required]
+        
         public string Username { get; set; }
-        [Required]
+        
         public string Email { get; set; }
 
 
@@ -15,8 +15,7 @@ namespace BloggingPlatformApplication.Models
         public List<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
 
         public User()
-        {
-                
+        {               
         }
     }
 }

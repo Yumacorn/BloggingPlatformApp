@@ -5,16 +5,17 @@ namespace BloggingPlatformApplication.Models
     public class BlogPost
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter title")]
         public string Title { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter Content")]
         public string Content { get; set; }
-        //public static DateTime timestamp_creation = DateTime.Now;
-        //public DateTime timestamp_updated = DateTime.Now;
+        public DateTimeOffset? timestamp_creation = DateTimeOffset.Now;
+        public DateTimeOffset? timestamp_updated = DateTimeOffset.Now;
 
         // Navigation properties to parent model of User
+        [Required(ErrorMessage = "Please set UserId")]
         public int UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
 
         public BlogPost()
         {

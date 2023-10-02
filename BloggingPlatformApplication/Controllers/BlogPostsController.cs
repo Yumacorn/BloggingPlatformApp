@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloggingPlatformApplication.Data;
 using BloggingPlatformApplication.Models;
+using System.Diagnostics;
 
 namespace BloggingPlatformApplication.Controllers
 {
@@ -49,7 +50,7 @@ namespace BloggingPlatformApplication.Controllers
         public IActionResult Create()
         {
             ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
-            ViewData["User"] = new SelectList(_context.User, "Id", "User");
+            ViewData["User"] = new SelectList(_context.User.ToList());
             return View();
         }
 
@@ -58,10 +59,12 @@ namespace BloggingPlatformApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content,User,UserId")] BlogPost blogPost)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,UserId")] BlogPost blogPost)
         {
-            System.Diagnostics.Debug.WriteLine(blogPost.UserId);
-            System.Diagnostics.Debug.WriteLine(blogPost);
+            var tempUser = await _context.User.FirstOrDefaultAsync(m => m.Id == blogPost.UserId);
+            //Debug.WriteLine(tempUser);
+            blogPost.User = tempUser;
+            //Debug.WriteLine(ModelState);
             if (ModelState.IsValid)
             {
                 _context.Add(blogPost);
