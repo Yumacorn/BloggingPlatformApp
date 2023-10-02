@@ -17,5 +17,10 @@ namespace BloggingPlatformApplication.Data
         {
             throw new NotImplementedException();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<BlogPost>().ToTable("BlogPost");
+        }
     }
 }
