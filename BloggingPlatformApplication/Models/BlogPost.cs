@@ -9,8 +9,8 @@ namespace BloggingPlatformApplication.Models
         public string Title { get; set; }
         [Required(ErrorMessage = "Please enter Content")]
         public string Content { get; set; }
-        public DateTime Created = DateTime.Now;
-        public DateTime LastUpdated = DateTime.Now;
+        public DateTime? Created { get; set; }
+        public DateTime? LastUpdated { get; set; }
 
         // Navigation properties to parent model of User
         [Required(ErrorMessage = "Please set UserId")]

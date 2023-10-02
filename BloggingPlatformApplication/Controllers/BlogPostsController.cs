@@ -59,15 +59,23 @@ namespace BloggingPlatformApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content,UserId")] BlogPost blogPost)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content,UserId,Created,LastUpdated")] BlogPost blogPost)
         {
             var tempUser = await _context.User.FirstOrDefaultAsync(m => m.Id == blogPost.UserId);
             //Debug.WriteLine(tempUser);
             blogPost.User = tempUser;
             //Debug.WriteLine(ModelState);
+            //@TODO: Add EF Interceptor for DateTime value
+            Debug.WriteLine(DateTime.Now);
+            blogPost.Created = DateTime.Now;
+            blogPost.LastUpdated = DateTime.Now;
+            Debug.WriteLine(blogPost.Created);
+            Debug.WriteLine(blogPost.LastUpdated);
             if (ModelState.IsValid)
             {
                 _context.Add(blogPost);
+                Debug.WriteLine(blogPost);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
