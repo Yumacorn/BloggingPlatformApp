@@ -23,14 +23,23 @@ Please note that support for Visual Studio for Mac is [planning to be retired on
     
     git clone https://github.com/Yumacorn/BloggingPlatformApp.git
     ```
-5) Once the repository succesfully is cloned, open the repo and in your IDE, on the Navigation Bar you should see a Menu Option which says **Debug > Start Debug (F5)**
+5) Once the repository succesfully is cloned, open the repo.
+6) In your IDE, go to the command prompt and build the project and it's depedencies using the following:
 
-6) This will open up the Project in your localhost default internet browser and allow you to explore the application.
+    ```
+    dotnet build
+    ```
+    
+    You should expect 0 Error(s)
+
+7) and in your IDE, on the Navigation Bar you should see a Menu Option which says **Debug > Start Debug (F5)**
+
+8) This will open up the Project in your localhost default internet browser and allow you to explore the application.
 
     * If the browser does not open automatically, you may need to choose IIS for the emulator.
     ![Image](https://images2.imgbox.com/d0/e5/BHc1sJy0_o.jpg)
     
-7) On the website, you can use the **Users** and **Blog Posts** navbar links to see the Users and Blog Posts, respectively.
+9) On the website, you can use the **Users** and **Blog Posts** navbar links to see the Users and Blog Posts, respectively.
     
     * Here you can have the ability to Create, Read, Update, Delete from both Data Domains
     
