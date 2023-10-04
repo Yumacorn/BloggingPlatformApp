@@ -6,13 +6,13 @@ namespace BloggingPlatformApplication.Models
     {
         public int Id { get; set; }
         
-        public string Username { get; set; }
+        public required string Username { get; set; }
         
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
 
         // Navigation properties to dependent child model of BlogPosts
-        public List<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
+        public List<BlogPost> BlogPosts { get; set; }
 
         public User()
         {               
