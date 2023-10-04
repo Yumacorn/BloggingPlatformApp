@@ -34,6 +34,14 @@ Please note that support for Visual Studio for Mac is [planning to be retired on
 
 7) and in your IDE, on the Navigation Bar you should see a Menu Option which says **Debug > Start Debug (F5)**
 
+8) Open up the Package Manager Console
+    * View > Other Windows > Package Manager Console
+    * If the data is not already present following installation, you may need to build the database using the Package Manager Console
+    ```
+    update-database
+    ```
+    * If you run into difficulties, please refer to the [EF Core Documentation](https://learn.microsoft.com/en-us/ef/core/cli/powershell#:~:text=Migration%2020180904195021_InitialCreate-,Update%2DDatabase,-Updates%20the%20database)
+
 8) This will open up the Project in your localhost default internet browser and allow you to explore the application.
 
     * If the browser does not open automatically, you may need to choose IIS for the emulator.
@@ -43,12 +51,6 @@ Please note that support for Visual Studio for Mac is [planning to be retired on
     
     * Here you can have the ability to Create, Read, Update, Delete from both Data Domains
     
-## TODO List
-    * TODO: Restrict CRUD ability to edit profile information and Blog Posts as appropraite to own User
-    * TODO: Seed Database with starting data using data seeding mechanism
-    * TODO: Implement additional data validation and error handling in the API beyond required and primitive data types
-    * TODO: Testing features (could use Cypress.io)
-    * TODO: (Bonus) Pagination and filtering options for blog posts.
 
 ## The Assignment
 
@@ -113,7 +115,7 @@ Add pagination and filtering options for retrieving blog posts.
 ## Checklist of Requirements:
 [x] - Domain Model
 
-[ ] - Entity Framework
+[X] - Entity Framework
 
 [ ] - API
 
@@ -122,3 +124,9 @@ Add pagination and filtering options for retrieving blog posts.
 [x] - Documentation
 
 [ ] - Bonus (Optional)
+
+## TODO List
+    * TODO: Restrict CRUD ability to edit profile information and Blog Posts as appropraite to own User
+    * TODO: Implement additional data validation and error handling in the API beyond required and primitive data types
+    * TODO: Testing features (could use Cypress.io)
+    * TODO: (Bonus) Pagination and filtering options for blog posts.
