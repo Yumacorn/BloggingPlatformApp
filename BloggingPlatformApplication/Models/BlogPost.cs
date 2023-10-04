@@ -6,9 +6,9 @@ namespace BloggingPlatformApplication.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Please enter title")]
-        public string Title { get; set; }
+        public required string Title { get; set; }
         [Required(ErrorMessage = "Please enter Content")]
-        public string Content { get; set; }
+        public required string Content { get; set; }
         public DateTime? Created { get; set; }
         public DateTime? LastUpdated { get; set; }
 
