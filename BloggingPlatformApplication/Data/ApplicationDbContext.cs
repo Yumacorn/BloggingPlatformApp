@@ -47,7 +47,54 @@ namespace BloggingPlatformApplication.Data
                     BlogPosts = { }
                 }
                 );
-
+            modelBuilder.Entity<BlogPost>()
+                .HasData(
+                 new BlogPost
+                 {
+                     Id = 1,
+                     Title = "The World's Greatest Showman",
+                     Content = "Starring Hugh Jackman and Zac Efron",
+                     Created = System.DateTime.Now,
+                     LastUpdated = System.DateTime.Now,
+                     UserId = 1
+                 },
+                 new BlogPost
+                 {
+                     Id = 2,
+                     Title = "From Now On",
+                     Content = "A biographical of the nonsensical and whimsical",
+                     Created = System.DateTime.Now,
+                     LastUpdated = System.DateTime.Now,
+                     UserId = 1
+                 },
+                 new BlogPost
+                 {
+                     Id = 3,
+                     Title = "Terraforming Mars",
+                     Content = "Home is where the Red Planet is",
+                     Created = System.DateTime.Now,
+                     LastUpdated = System.DateTime.Now,
+                     UserId = 2
+                 },
+                 new BlogPost
+                 {
+                     Id = 4,
+                     Title = "Don't trust the Detective",
+                     Content = "A series of unfortunate events in space",
+                     Created = System.DateTime.Now,
+                     LastUpdated = System.DateTime.Now,
+                     UserId = 2
+                 },
+                 new BlogPost
+                 {
+                     Id = 5,
+                     Title = "How to hone your Swordsman Skills",
+                     Content = "A quick guide to 1,000,000 berry bounties",
+                     Created = System.DateTime.Now,
+                     LastUpdated = System.DateTime.Now,
+                     UserId = 3
+                 }
+                );
         }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
