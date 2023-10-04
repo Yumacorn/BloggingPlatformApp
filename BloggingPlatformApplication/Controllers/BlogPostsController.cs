@@ -8,16 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using BloggingPlatformApplication.Data;
 using BloggingPlatformApplication.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace BloggingPlatformApplication.Controllers
 {
     public class BlogPostsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IAuthorizationService _authorizationService;
 
-        public BlogPostsController(ApplicationDbContext context)
+        public BlogPostsController(IAuthorizationService authorizationService, ApplicationDbContext context)
         {
             _context = context;
+            _authorizationService = authorizationService;
         }
 
         // GET: BlogPosts
@@ -49,6 +53,11 @@ namespace BloggingPlatformApplication.Controllers
         // GET: BlogPosts/Create
         public IActionResult Create()
         {
+            //var authorizationResult = await _authorizationService
+            //.AuthorizeAsync(User, BlogPost, "CreatePolicy");
+            //Debug.WriteLine(authorizationResult);
+
+
             ViewData["UserId"] = new SelectList(_context.User, "Id", "Email");
             ViewData["User"] = new SelectList(_context.User.ToList());
             return View();
@@ -96,6 +105,12 @@ namespace BloggingPlatformApplication.Controllers
             {
                 return NotFound();
             }
+
+            // TODO: Troubleshoot User.Identities[0].name when "logged in" should return a user. Adjust Policy
+            var authorizationResult = await _authorizationService
+            .AuthorizeAsync(User, blogPost, "UserLoggedIn");
+            Debug.WriteLine(authorizationResult);
+
             ViewData["UserId"] = new SelectList(_context.User, "Id", "Email", blogPost.UserId);
             return View(blogPost);
         }

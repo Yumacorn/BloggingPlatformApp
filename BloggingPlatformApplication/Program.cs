@@ -1,3 +1,4 @@
+using AuthorizationPolicies.Policies.Requirements;
 using BloggingPlatformApplication.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Add Authorization policies.
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("UserLoggedIn", policy =>
+        policy.Requirements.Add(new isLoggedInRequirement(true)));
+});
 
 var app = builder.Build();
 
